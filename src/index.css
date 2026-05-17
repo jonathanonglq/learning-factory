@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+@import 'tailwindcss';
+
+@theme {
+  --color-paper: #faf7f2;
+  --color-paper-strong: #f3efe9;
+  --color-ink: #1c1712;
+  --color-gold: #c9a882;
+  --font-sans: 'Inter', sans-serif;
+  --font-serif: 'Playfair Display', serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+  background: #faf7f2;
+  color: #1c1712;
+  font-family: 'Inter', sans-serif;
+}
+
+button,
+a,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.grid-pattern {
+  background-image:
+    linear-gradient(rgba(28, 23, 18, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(28, 23, 18, 0.08) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
