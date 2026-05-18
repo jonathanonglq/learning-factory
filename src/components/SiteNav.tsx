@@ -21,7 +21,7 @@ export function SiteNav({ activeRoute, onNavigate }: SiteNavProps) {
                   onNavigate(item.id);
                 }}
                 className={cn(
-                  'block py-2 text-[10px] font-medium uppercase tracking-0 transition-colors sm:text-sm sm:tracking-[0.12em]',
+                  'block py-2 font-article text-[13px] font-medium tracking-0 transition-colors sm:text-base',
                   activeRoute === item.id ? 'text-ink' : 'text-ink/45 hover:text-ink',
                 )}
               >

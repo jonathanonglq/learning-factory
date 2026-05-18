@@ -10,37 +10,12 @@ export function LandingPage({ onNavigate }: LandingPageProps) {
   return (
     <main className="mx-auto max-w-[900px] px-6">
       <section className="flex min-h-[54vh] flex-col justify-center py-16 text-center sm:min-h-[62vh] sm:py-20">
-        <motion.p
-          initial={{ opacity: 0, y: 14 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="mb-5 text-xs font-semibold uppercase tracking-[0.26em] text-gold"
-        >
-          {profile.role}
-        </motion.p>
-        <motion.h1
-          initial={{ opacity: 0, y: 18 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.05 }}
-          className="font-serif text-[clamp(3.2rem,12vw,6.8rem)] leading-[0.9] text-ink"
-        >
+        <h1 className="font-serif text-[clamp(3.2rem,12vw,6.8rem)] leading-[0.9] text-ink">
           {profile.name}
-        </motion.h1>
-        <motion.p
-          initial={{ opacity: 0, y: 18 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.12 }}
-          className="mx-auto mt-6 max-w-2xl font-serif text-xl italic leading-relaxed text-ink/65 sm:text-2xl"
-        >
+        </h1>
+        <p className="mx-auto mt-6 max-w-2xl font-serif text-xl italic leading-relaxed text-ink/65 sm:text-2xl">
           {profile.summary}
-        </motion.p>
-      </section>
-
-      <section className="border-y border-ink/5 py-10 sm:py-14">
-        <div className="grid gap-5 sm:grid-cols-3">
-          <Stat label="Current Mode" value="Research Notes" />
-          <Stat label="Base" value={profile.location} />
-          <Stat label="Focus" value="AI Systems" />
-        </div>
+        </p>
       </section>
 
       <section className="space-y-20 py-16 sm:py-24">
@@ -82,14 +57,5 @@ export function LandingPage({ onNavigate }: LandingPageProps) {
         ))}
       </section>
     </main>
-  );
-}
-
-function Stat({ label, value }: { label: string; value: string }) {
-  return (
-    <div className="text-center sm:text-left">
-      <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-ink/35">{label}</p>
-      <p className="mt-2 font-serif text-2xl text-ink">{value}</p>
-    </div>
   );
 }
