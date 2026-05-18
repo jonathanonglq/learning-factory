@@ -52,7 +52,7 @@ export interface Experiment {
 
 export const profile = {
   name: 'Jonathan Ong',
-  role: 'Aspiring AI Research Engineer',
+  role: 'AI Research Notes',
   summary:
     'Thinking out loud across machine learning systems, research taste, and the craft of turning ideas into working experiments.',
   location: 'Singapore',
@@ -277,7 +277,7 @@ export const humanLoop = {
   title: 'Human Loop',
   subtitle: 'The person behind the research notes.',
   paragraphs: [
-    'I am building toward research engineering work: reading deeply, implementing ideas from scratch, and learning how systems behave when theory meets constraints.',
+    'I am reading deeply, implementing ideas from scratch, and learning how systems behave when theory meets constraints.',
     'This portfolio is organized around how I learn. Brain Dump captures broad thoughts, Rabbit Hole turns concepts into explanations, Lab Bench collects experiments, and Human Loop keeps the personal context visible.',
   ],
   principles: [

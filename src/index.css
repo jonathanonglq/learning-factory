@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
 @import 'tailwindcss';
 
 @theme {
@@ -6,9 +5,9 @@
   --color-paper-strong: #f3efe9;
   --color-ink: #1c1712;
   --color-gold: #c9a882;
-  --font-sans: 'Inter', sans-serif;
-  --font-serif: 'Playfair Display', serif;
   --font-article: Georgia, 'Times New Roman', serif;
+  --font-sans: var(--font-article);
+  --font-serif: var(--font-article);
 }
 
 * {
@@ -30,7 +29,7 @@ body {
   overflow-x: hidden;
   background: #faf7f2;
   color: #1c1712;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-article);
 }
 
 button,
@@ -72,7 +71,22 @@ button {
   color: #a64f34;
   float: left;
   font-size: 3.24em;
-  font-weight: 700;
+  font-weight: 400;
   line-height: 0.86;
   margin: 0.08em 0.12em 0 0;
+}
+
+.dropcap-enter::first-letter {
+  animation: dropcap-in 0.72s cubic-bezier(0.22, 1, 0.36, 1) 0.18s both;
+}
+
+@keyframes dropcap-in {
+  from {
+    color: rgba(166, 79, 52, 0);
+    transform: translateY(0.12em);
+  }
+  to {
+    color: #a64f34;
+    transform: translateY(0);
+  }
 }

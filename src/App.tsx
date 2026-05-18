@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
 import { Footer } from '@/components/Footer';
 import { BrainDumpPage } from '@/components/BrainDumpPage';
 import { HumanLoopPage } from '@/components/HumanLoopPage';
@@ -52,16 +53,26 @@ export default function App() {
   return (
     <div className="min-h-screen bg-paper text-ink selection:bg-gold/25">
       <SiteNav activeRoute={activeRoute} onNavigate={navigate} />
-      {activeRoute === 'home' && <LandingPage onNavigate={navigate} />}
-      {activeRoute === 'brain-dump' &&
-        (activePostId ? (
-          <PostDetailPage postId={activePostId} onBack={() => navigate('brain-dump')} />
-        ) : (
-          <BrainDumpPage onNavigate={navigate} onOpenPost={openPost} />
-        ))}
-      {activeRoute === 'rabbit-hole' && <RabbitHolePage onNavigate={navigate} />}
-      {activeRoute === 'lab-bench' && <LabBenchPage onNavigate={navigate} />}
-      {activeRoute === 'human-loop' && <HumanLoopPage onNavigate={navigate} />}
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={`${activeRoute}-${activePostId ?? 'index'}`}
+          initial={{ opacity: 0, y: 14 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -8 }}
+          transition={{ duration: 0.34, ease: [0.22, 1, 0.36, 1] }}
+        >
+          {activeRoute === 'home' && <LandingPage onNavigate={navigate} />}
+          {activeRoute === 'brain-dump' &&
+            (activePostId ? (
+              <PostDetailPage postId={activePostId} onBack={() => navigate('brain-dump')} />
+            ) : (
+              <BrainDumpPage onNavigate={navigate} onOpenPost={openPost} />
+            ))}
+          {activeRoute === 'rabbit-hole' && <RabbitHolePage onNavigate={navigate} />}
+          {activeRoute === 'lab-bench' && <LabBenchPage onNavigate={navigate} />}
+          {activeRoute === 'human-loop' && <HumanLoopPage onNavigate={navigate} />}
+        </motion.div>
+      </AnimatePresence>
       <Footer />
     </div>
   );

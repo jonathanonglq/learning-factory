@@ -4,9 +4,8 @@ import { profile } from '@/portfolio-data';
 export function Footer() {
   return (
     <footer className="border-t border-ink/5 py-10 sm:py-12">
-      <div className="mx-auto flex max-w-[900px] flex-col items-center justify-between gap-6 px-6 text-center text-sm text-ink/45 sm:flex-row sm:text-left">
+      <div className="mx-auto flex max-w-[900px] flex-col items-center gap-6 px-6 text-center text-sm text-ink/45">
         <div>
-          <p className="font-serif text-lg font-bold text-ink">{profile.role}</p>
           <p className="mt-1">Curiosity is the primary heuristic.</p>
         </div>
         <div className="flex items-center gap-5">
@@ -23,7 +22,6 @@ export function Footer() {
             <Mail className="h-5 w-5" />
           </a>
         </div>
-        <p className="text-[10px] font-bold uppercase tracking-[0.18em]">Built with intent</p>
       </div>
     </footer>
   );

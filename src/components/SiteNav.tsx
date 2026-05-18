@@ -9,7 +9,7 @@ interface SiteNavProps {
 
 export function SiteNav({ activeRoute, onNavigate }: SiteNavProps) {
   return (
-    <nav className="sticky top-0 z-50 border-b border-ink/5 bg-paper/85 backdrop-blur-md">
+    <nav className="sticky top-0 z-50 bg-paper/85 backdrop-blur-md">
       <div className="mx-auto flex min-h-16 max-w-[900px] items-center justify-center px-4 py-3 sm:h-16 sm:px-6 sm:py-0">
         <ul className="flex w-full flex-wrap items-center justify-center gap-x-6 gap-y-1 whitespace-nowrap sm:flex-nowrap sm:gap-12">
           {navItems.map((item) => (
@@ -21,17 +21,17 @@ export function SiteNav({ activeRoute, onNavigate }: SiteNavProps) {
                   onNavigate(item.id);
                 }}
                 className={cn(
-                  'block py-2 font-article text-[13px] font-medium tracking-0 transition-colors sm:text-base',
+                  'block py-2 text-[13px] tracking-0 transition-colors sm:text-base',
                   activeRoute === item.id ? 'text-ink' : 'text-ink/45 hover:text-ink',
                 )}
               >
                 {item.label}
               </a>
               {activeRoute === item.id && (
-                <motion.div
+                <motion.span
                   layoutId="nav-underline"
-                  className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gold"
-                  transition={{ type: 'spring', stiffness: 380, damping: 30 }}
+                  className="absolute bottom-1 left-0 right-0 h-px bg-gold"
+                  transition={{ type: 'spring', stiffness: 420, damping: 34 }}
                 />
               )}
             </li>
