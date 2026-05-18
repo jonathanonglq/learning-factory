@@ -4,6 +4,7 @@ import { BrainDumpPage } from '@/components/BrainDumpPage';
 import { HumanLoopPage } from '@/components/HumanLoopPage';
 import { LabBenchPage } from '@/components/LabBenchPage';
 import { LandingPage } from '@/components/LandingPage';
+import { PostDetailPage } from '@/components/PostDetailPage';
 import { RabbitHolePage } from '@/components/RabbitHolePage';
 import { SiteNav } from '@/components/SiteNav';
 import type { RouteId } from '@/portfolio-data';
@@ -17,27 +18,47 @@ function getRouteFromHash(): RouteId {
 
 export default function App() {
   const [activeRoute, setActiveRoute] = React.useState<RouteId>(getRouteFromHash);
+  const [activePostId, setActivePostId] = React.useState<string | null>(() => {
+    const match = window.location.hash.match(/^#\/brain-dump\/(.+)$/);
+    return match?.[1] ?? null;
+  });
 
   React.useEffect(() => {
-    const handleHashChange = () => setActiveRoute(getRouteFromHash());
+    const handleHashChange = () => {
+      const postMatch = window.location.hash.match(/^#\/brain-dump\/(.+)$/);
+      setActivePostId(postMatch?.[1] ?? null);
+      setActiveRoute(postMatch ? 'brain-dump' : getRouteFromHash());
+    };
     window.addEventListener('hashchange', handleHashChange);
     return () => window.removeEventListener('hashchange', handleHashChange);
   }, []);
 
   React.useLayoutEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
-  }, [activeRoute]);
+  }, [activeRoute, activePostId]);
 
   function navigate(route: RouteId) {
+    setActivePostId(null);
     setActiveRoute(route);
     window.location.hash = route === 'home' ? '#/' : `#/${route}`;
+  }
+
+  function openPost(postId: string) {
+    setActiveRoute('brain-dump');
+    setActivePostId(postId);
+    window.location.hash = `#/brain-dump/${postId}`;
   }
 
   return (
     <div className="min-h-screen bg-paper text-ink selection:bg-gold/25">
       <SiteNav activeRoute={activeRoute} onNavigate={navigate} />
       {activeRoute === 'home' && <LandingPage onNavigate={navigate} />}
-      {activeRoute === 'brain-dump' && <BrainDumpPage onNavigate={navigate} />}
+      {activeRoute === 'brain-dump' &&
+        (activePostId ? (
+          <PostDetailPage postId={activePostId} onBack={() => navigate('brain-dump')} />
+        ) : (
+          <BrainDumpPage onNavigate={navigate} onOpenPost={openPost} />
+        ))}
       {activeRoute === 'rabbit-hole' && <RabbitHolePage onNavigate={navigate} />}
       {activeRoute === 'lab-bench' && <LabBenchPage onNavigate={navigate} />}
       {activeRoute === 'human-loop' && <HumanLoopPage onNavigate={navigate} />}

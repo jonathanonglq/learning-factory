@@ -29,6 +29,7 @@ export interface ThoughtPost {
   date: string;
   readTime: string;
   category: string;
+  body: string[];
 }
 
 export interface ConceptNote {
@@ -136,6 +137,11 @@ export const thoughtPosts: ThoughtPost[] = [
     date: 'Oct 12, 2026',
     readTime: '5 min read',
     category: 'Architecture',
+    body: [
+      'I keep returning to the feeling that scale is necessary but no longer a satisfying explanation. Larger models buy us breadth, fluency, and surprising transfer, but the hard parts of intelligence still seem to live in the loops around the model: memory, environment feedback, tool use, and the ability to test beliefs against reality.',
+      'The useful question is not whether scaling is over. It is what scaling should be coupled with. Retrieval changes what a model can remember, evals change what a team can trust, and agents change the shape of the task from a single completion into a sequence of decisions.',
+      'My current bias is to study the systems around models as seriously as the model weights themselves. The frontier may look less like one giant artifact and more like a set of engineered feedback loops that make reasoning observable, correctable, and useful.',
+    ],
   },
   {
     id: 'ml-reproducibility',
@@ -145,6 +151,11 @@ export const thoughtPosts: ThoughtPost[] = [
     date: 'Sep 28, 2026',
     readTime: '8 min read',
     category: 'Culture',
+    body: [
+      'Machine learning has a reproducibility problem that is easy to describe and hard to fix. A result can depend on data cleaning choices, random seeds, hardware details, hidden prompts, undocumented filtering, and a dozen other decisions that never make it into the abstract.',
+      'That does not make the work useless. It means the research object is larger than the reported number. A paper is not only a claim about a model; it is a claim about a training recipe, an evaluation environment, and the assumptions that made both of those feel reasonable.',
+      'The research culture I want to participate in treats reproduction as a first-class contribution. Re-running, simplifying, breaking, and documenting results should count as progress because it turns fragile knowledge into usable infrastructure.',
+    ],
   },
   {
     id: 'reading-vs-building',
@@ -154,6 +165,11 @@ export const thoughtPosts: ThoughtPost[] = [
     date: 'Aug 15, 2026',
     readTime: '4 min read',
     category: 'Praxis',
+    body: [
+      'Reading can create a convincing illusion of understanding. The terms become familiar, the diagrams feel natural, and the argument begins to sound obvious. Then implementation starts, and every vague sentence becomes a decision that code refuses to make for you.',
+      'That friction is the point. Building a small version of an idea forces me to notice the quiet parts: tensor shapes, failure modes, data assumptions, and the places where a paper compresses three weeks of engineering into one sentence.',
+      'I still read papers, but I trust the notes more when they are paired with an artifact. The artifact does not have to be impressive. It just has to be honest enough to reveal what I did not understand.',
+    ],
   },
   {
     id: 'cultural-mirrors',
@@ -163,6 +179,11 @@ export const thoughtPosts: ThoughtPost[] = [
     date: 'Jul 22, 2026',
     readTime: '6 min read',
     category: 'Ethics',
+    body: [
+      'Language models are trained on the residue of human culture. That makes them technically fascinating and socially uncomfortable. They compress patterns of taste, expertise, prejudice, generosity, and noise into a system that can answer with confidence even when the source material is conflicted.',
+      'This is why alignment cannot be reduced to a technical checklist. The model is not only optimizing behavior; it is reflecting choices about whose text counted, which failures mattered, and what kind of helpfulness we rewarded.',
+      'I do not think that makes the project hopeless. It makes it more serious. Studying models as cultural mirrors may help us build systems that are not only more capable, but also easier to question.',
+    ],
   },
 ];
 

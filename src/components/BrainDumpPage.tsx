@@ -3,7 +3,12 @@ import { ArrowRight, Calendar, Clock } from 'lucide-react';
 import { thoughtPosts, type RouteId } from '@/portfolio-data';
 import { BackHomeLink } from './BackHomeLink';
 
-export function BrainDumpPage({ onNavigate }: { onNavigate: (route: RouteId) => void }) {
+interface BrainDumpPageProps {
+  onNavigate: (route: RouteId) => void;
+  onOpenPost: (postId: string) => void;
+}
+
+export function BrainDumpPage({ onNavigate, onOpenPost }: BrainDumpPageProps) {
   return (
     <main className="mx-auto max-w-[900px] px-6 py-16 sm:py-24">
       <BackHomeLink onNavigate={onNavigate} />
@@ -35,7 +40,10 @@ export function BrainDumpPage({ onNavigate }: { onNavigate: (route: RouteId) => 
             </div>
             <p className="max-w-3xl text-lg leading-relaxed text-ink/75">{post.excerpt}</p>
             <div className="mt-6 flex items-center justify-between gap-4">
-              <button className="inline-flex items-center gap-2 text-sm font-semibold text-gold transition-colors hover:text-ink">
+              <button
+                onClick={() => onOpenPost(post.id)}
+                className="inline-flex items-center gap-2 text-sm font-semibold text-gold transition-colors hover:text-ink"
+              >
                 Read full thought
                 <ArrowRight className="h-4 w-4" />
               </button>

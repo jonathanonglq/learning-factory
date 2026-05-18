@@ -55,3 +55,23 @@ button {
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+
+.post-body {
+  color: #1c1712;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(1.16rem, 2vw, 1.36rem);
+  line-height: 1.72;
+}
+
+.post-body p {
+  margin: 0 0 1.45em;
+}
+
+.post-body .with-dropcap::first-letter {
+  color: #a64f34;
+  float: left;
+  font-size: 4.1em;
+  font-weight: 700;
+  line-height: 0.78;
+  margin: 0.09em 0.12em 0 0;
+}
