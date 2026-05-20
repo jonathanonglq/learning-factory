@@ -8,27 +8,49 @@ import { LandingPage } from '@/components/LandingPage';
 import { PostDetailPage } from '@/components/PostDetailPage';
 import { RabbitHolePage } from '@/components/RabbitHolePage';
 import { SiteNav } from '@/components/SiteNav';
+import { isContentSection, type ContentSectionId } from '@/content/posts';
 import type { RouteId } from '@/portfolio-data';
 
 const routes = new Set<RouteId>(['home', 'brain-dump', 'rabbit-hole', 'lab-bench', 'human-loop']);
+export type ThemeMode = 'light' | 'dark';
 
 function getRouteFromHash(): RouteId {
-  const hash = window.location.hash.replace(/^#\/?/, '') as RouteId;
+  const hash = window.location.hash.replace(/^#\/?/, '').split('/')[0] as RouteId;
   return routes.has(hash) ? hash : 'home';
 }
 
 export default function App() {
+  const [theme, setTheme] = React.useState<ThemeMode>(() => {
+    const stored = window.localStorage.getItem('theme');
+
+    if (stored === 'light' || stored === 'dark') return stored;
+
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  });
   const [activeRoute, setActiveRoute] = React.useState<RouteId>(getRouteFromHash);
+  const [activePostSection, setActivePostSection] = React.useState<ContentSectionId | null>(() => {
+    const route = getRouteFromHash();
+    const match = window.location.hash.match(/^#\/([^/]+)\/(.+)$/);
+    return match && isContentSection(route) ? route : null;
+  });
   const [activePostId, setActivePostId] = React.useState<string | null>(() => {
-    const match = window.location.hash.match(/^#\/brain-dump\/(.+)$/);
-    return match?.[1] ?? null;
+    const match = window.location.hash.match(/^#\/([^/]+)\/(.+)$/);
+    return match?.[2] ?? null;
   });
 
   React.useEffect(() => {
+    document.documentElement.dataset.theme = theme;
+    window.localStorage.setItem('theme', theme);
+  }, [theme]);
+
+  React.useEffect(() => {
     const handleHashChange = () => {
-      const postMatch = window.location.hash.match(/^#\/brain-dump\/(.+)$/);
-      setActivePostId(postMatch?.[1] ?? null);
-      setActiveRoute(postMatch ? 'brain-dump' : getRouteFromHash());
+      const route = getRouteFromHash();
+      const postMatch = window.location.hash.match(/^#\/([^/]+)\/(.+)$/);
+      const postSection = postMatch && isContentSection(route) ? route : null;
+      setActivePostSection(postSection);
+      setActivePostId(postSection ? (postMatch?.[2] ?? null) : null);
+      setActiveRoute(route);
     };
     window.addEventListener('hashchange', handleHashChange);
     return () => window.removeEventListener('hashchange', handleHashChange);
@@ -39,20 +61,26 @@ export default function App() {
   }, [activeRoute, activePostId]);
 
   function navigate(route: RouteId) {
+    setActivePostSection(null);
     setActivePostId(null);
     setActiveRoute(route);
     window.location.hash = route === 'home' ? '#/' : `#/${route}`;
   }
 
-  function openPost(postId: string) {
-    setActiveRoute('brain-dump');
+  function openPost(section: ContentSectionId, postId: string) {
+    setActiveRoute(section);
+    setActivePostSection(section);
     setActivePostId(postId);
-    window.location.hash = `#/brain-dump/${postId}`;
+    window.location.hash = `#/${section}/${postId}`;
+  }
+
+  function toggleTheme() {
+    setTheme((current) => (current === 'dark' ? 'light' : 'dark'));
   }
 
   return (
     <div className="min-h-screen bg-paper text-ink selection:bg-gold/25">
-      <SiteNav activeRoute={activeRoute} onNavigate={navigate} />
+      <SiteNav activeRoute={activeRoute} onNavigate={navigate} theme={theme} onToggleTheme={toggleTheme} />
       <AnimatePresence mode="wait">
         <motion.div
           key={`${activeRoute}-${activePostId ?? 'index'}`}
@@ -61,15 +89,25 @@ export default function App() {
           exit={{ opacity: 0, y: -8 }}
           transition={{ duration: 0.34, ease: [0.22, 1, 0.36, 1] }}
         >
-          {activeRoute === 'home' && <LandingPage onNavigate={navigate} />}
+          {activeRoute === 'home' && <LandingPage onNavigate={navigate} onOpenPost={openPost} />}
           {activeRoute === 'brain-dump' &&
-            (activePostId ? (
-              <PostDetailPage postId={activePostId} onBack={() => navigate('brain-dump')} />
+            (activePostSection === 'brain-dump' && activePostId ? (
+              <PostDetailPage section="brain-dump" postId={activePostId} onBack={() => navigate('brain-dump')} />
             ) : (
               <BrainDumpPage onNavigate={navigate} onOpenPost={openPost} />
             ))}
-          {activeRoute === 'rabbit-hole' && <RabbitHolePage onNavigate={navigate} />}
-          {activeRoute === 'lab-bench' && <LabBenchPage onNavigate={navigate} />}
+          {activeRoute === 'rabbit-hole' &&
+            (activePostSection === 'rabbit-hole' && activePostId ? (
+              <PostDetailPage section="rabbit-hole" postId={activePostId} onBack={() => navigate('rabbit-hole')} />
+            ) : (
+              <RabbitHolePage onNavigate={navigate} onOpenPost={openPost} />
+            ))}
+          {activeRoute === 'lab-bench' &&
+            (activePostSection === 'lab-bench' && activePostId ? (
+              <PostDetailPage section="lab-bench" postId={activePostId} onBack={() => navigate('lab-bench')} />
+            ) : (
+              <LabBenchPage onNavigate={navigate} onOpenPost={openPost} />
+            ))}
           {activeRoute === 'human-loop' && <HumanLoopPage onNavigate={navigate} />}
         </motion.div>
       </AnimatePresence>

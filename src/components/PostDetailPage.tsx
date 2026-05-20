@@ -1,15 +1,18 @@
 import * as React from 'react';
 import { motion, useScroll, useSpring } from 'framer-motion';
 import { ArrowLeft } from 'lucide-react';
-import { thoughtPosts, type ThoughtPost } from '@/portfolio-data';
+import { formatPostDate, getContentPost, getSectionPosts, type ContentPost, type ContentSectionId } from '@/content/posts';
+import { landingSections } from '@/portfolio-data';
 
 interface PostDetailPageProps {
+  section: ContentSectionId;
   postId: string;
   onBack: () => void;
 }
 
-export function PostDetailPage({ postId, onBack }: PostDetailPageProps) {
-  const post = thoughtPosts.find((item) => item.id === postId) ?? thoughtPosts[0];
+export function PostDetailPage({ section, postId, onBack }: PostDetailPageProps) {
+  const post = getContentPost(section, postId) ?? getSectionPosts(section)[0];
+  const sectionTitle = landingSections.find((item) => item.id === section)?.title ?? 'section';
   const articleRef = React.useRef<HTMLElement | null>(null);
   const { scrollYProgress } = useScroll({
     target: articleRef,
@@ -25,15 +28,14 @@ export function PostDetailPage({ postId, onBack }: PostDetailPageProps) {
         className="mb-12 inline-flex items-center gap-2 text-xs uppercase tracking-[0.18em] text-gold transition-colors hover:text-ink"
       >
         <ArrowLeft className="h-4 w-4" />
-        Back to brain dump
+        Back to {sectionTitle.toLowerCase()}
       </button>
 
       <article ref={articleRef}>
         <header className="mb-12 border-b border-ink/5 pb-10">
-          <p className="mb-4 text-[10px] uppercase tracking-[0.22em] text-gold">{post.category}</p>
           <h1 className="font-serif text-4xl leading-tight text-ink sm:text-6xl">{post.title}</h1>
-          <div className="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-[10px] uppercase tracking-[0.16em] text-ink/35">
-            <span>{post.date}</span>
+          <div className="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-xs uppercase tracking-[0.16em] text-ink/35">
+            <span>{formatPostDate(post.date)}</span>
             <span>{post.readTime}</span>
           </div>
         </header>
@@ -44,10 +46,12 @@ export function PostDetailPage({ postId, onBack }: PostDetailPageProps) {
   );
 }
 
-function ArticleBody({ post }: { post: ThoughtPost }) {
+function ArticleBody({ post }: { post: ContentPost }) {
+  const paragraphs = post.body.split(/\n{2,}/).filter(Boolean);
+
   return (
     <div className="post-body">
-      {post.body.map((paragraph, index) => (
+      {paragraphs.map((paragraph, index) => (
         <p key={paragraph} className={index === 0 ? 'with-dropcap dropcap-enter' : undefined}>
           {paragraph}
         </p>

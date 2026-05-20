@@ -11,6 +11,7 @@ export function PredictiveText({ text, className, replayable = false, label }: P
   const [displayed, setDisplayed] = React.useState(() => text[0] ?? '');
   const [activeIndex, setActiveIndex] = React.useState(1);
   const [runId, setRunId] = React.useState(0);
+  const tokenDelayMs = 8;
 
   React.useEffect(() => {
     const letters = text.split('');
@@ -41,7 +42,7 @@ export function PredictiveText({ text, className, replayable = false, label }: P
           return;
         }
 
-        const start = 120 + index * 58;
+        const start = 120 + index * tokenDelayMs;
         const lock = start + 86;
 
         if (elapsed >= lock) {
@@ -61,7 +62,7 @@ export function PredictiveText({ text, className, replayable = false, label }: P
       setDisplayed(nextChars.join(''));
       setActiveIndex(nextActiveIndex);
 
-      if (elapsed > 120 + letters.length * 58 + 120) {
+      if (elapsed > 120 + letters.length * tokenDelayMs + 120) {
         setDisplayed(text);
         setActiveIndex(letters.length);
         window.clearInterval(interval);

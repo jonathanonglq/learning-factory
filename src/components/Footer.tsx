@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, Twitter } from 'lucide-react';
+import { Github, Linkedin } from 'lucide-react';
 import { profile } from '@/portfolio-data';
 
 export function Footer() {
@@ -13,13 +13,12 @@ export function Footer() {
             <Github className="h-5 w-5" />
           </a>
           <a aria-label="X" href={profile.socials.x} className="transition-colors hover:text-gold">
-            <Twitter className="h-5 w-5" />
+            <svg aria-hidden="true" viewBox="0 0 24 24" className="h-5 w-5 fill-current">
+              <path d="M18.9 2h3.3l-7.2 8.2L23.5 22h-6.6l-5.2-6.8L5.8 22H2.5l7.7-8.8L2 2h6.8l4.7 6.2L18.9 2Zm-1.2 17.9h1.8L7.8 4H5.9l11.8 15.9Z" />
+            </svg>
           </a>
           <a aria-label="LinkedIn" href={profile.socials.linkedin} className="transition-colors hover:text-gold">
             <Linkedin className="h-5 w-5" />
-          </a>
-          <a aria-label="Email" href={`mailto:${profile.email}`} className="transition-colors hover:text-gold">
-            <Mail className="h-5 w-5" />
           </a>
         </div>
       </div>

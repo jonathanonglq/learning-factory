@@ -1,10 +1,52 @@
 @import 'tailwindcss';
 
+:root {
+  color-scheme: light;
+  --paper: #faf7f2;
+  --paper-strong: #f3efe9;
+  --ink: #1c1712;
+  --ink-rgb: 28, 23, 18;
+  --gold: #c9a882;
+  --dropcap: #a64f34;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --paper: #171512;
+    --paper-strong: #211e19;
+    --ink: #eee5d8;
+    --ink-rgb: 238, 229, 216;
+    --gold: #d6a86d;
+    --dropcap: #d08a66;
+  }
+}
+
+:root[data-theme='light'] {
+  color-scheme: light;
+  --paper: #faf7f2;
+  --paper-strong: #f3efe9;
+  --ink: #1c1712;
+  --ink-rgb: 28, 23, 18;
+  --gold: #c9a882;
+  --dropcap: #a64f34;
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --paper: #171512;
+  --paper-strong: #211e19;
+  --ink: #eee5d8;
+  --ink-rgb: 238, 229, 216;
+  --gold: #d6a86d;
+  --dropcap: #d08a66;
+}
+
 @theme {
-  --color-paper: #faf7f2;
-  --color-paper-strong: #f3efe9;
-  --color-ink: #1c1712;
-  --color-gold: #c9a882;
+  --color-paper: var(--paper);
+  --color-paper-strong: var(--paper-strong);
+  --color-ink: var(--ink);
+  --color-gold: var(--gold);
   --font-article: Georgia, 'Times New Roman', serif;
   --font-sans: var(--font-article);
   --font-serif: var(--font-article);
@@ -27,8 +69,8 @@ html {
 
 body {
   overflow-x: hidden;
-  background: #faf7f2;
-  color: #1c1712;
+  background: var(--paper);
+  color: var(--ink);
   font-family: var(--font-article);
 }
 
@@ -44,8 +86,8 @@ button {
 
 .grid-pattern {
   background-image:
-    linear-gradient(rgba(28, 23, 18, 0.08) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(28, 23, 18, 0.08) 1px, transparent 1px);
+    linear-gradient(rgba(var(--ink-rgb), 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(var(--ink-rgb), 0.08) 1px, transparent 1px);
   background-size: 20px 20px;
 }
 
@@ -57,7 +99,7 @@ button {
 }
 
 .post-body {
-  color: #1c1712;
+  color: var(--ink);
   font-family: var(--font-article);
   font-size: clamp(1.16rem, 2vw, 1.36rem);
   line-height: 1.72;
@@ -68,7 +110,7 @@ button {
 }
 
 .post-body .with-dropcap::first-letter {
-  color: #a64f34;
+  color: var(--dropcap);
   float: left;
   font-size: 3.24em;
   font-weight: 400;
@@ -86,7 +128,7 @@ button {
     transform: translateY(0.12em);
   }
   to {
-    color: #a64f34;
+    color: var(--dropcap);
     transform: translateY(0);
   }
 }
