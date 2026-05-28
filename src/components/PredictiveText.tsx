@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { cn } from '@/lib/utils';
 
 interface PredictiveTextProps {
   text: string;
@@ -11,7 +12,7 @@ export function PredictiveText({ text, className, replayable = false, label }: P
   const [displayed, setDisplayed] = React.useState(() => text[0] ?? '');
   const [activeIndex, setActiveIndex] = React.useState(1);
   const [runId, setRunId] = React.useState(0);
-  const tokenDelayMs = 8;
+  const tokenDelayMs = 15;
 
   React.useEffect(() => {
     const letters = text.split('');
@@ -43,7 +44,7 @@ export function PredictiveText({ text, className, replayable = false, label }: P
         }
 
         const start = 120 + index * tokenDelayMs;
-        const lock = start + 86;
+        const lock = start + 100;
 
         if (elapsed >= lock) {
           nextChars.push(target === ' ' ? '\u00A0' : target);
@@ -73,7 +74,7 @@ export function PredictiveText({ text, className, replayable = false, label }: P
   }, [text, runId]);
 
   const content = (
-    <span aria-label={text} className={className}>
+    <span aria-label={text} className={cn('whitespace-nowrap', className)}>
       <span aria-hidden="true" className="relative inline-grid">
         <span className="col-start-1 row-start-1 opacity-0">{text}</span>
         <span className="col-start-1 row-start-1 justify-self-start">
@@ -97,7 +98,7 @@ export function PredictiveText({ text, className, replayable = false, label }: P
       type="button"
       aria-label={label ?? `Replay animation for ${text}`}
       onClick={() => setRunId((current) => current + 1)}
-      className="inline-block cursor-pointer text-left focus:outline-none focus-visible:rounded-sm focus-visible:ring-1 focus-visible:ring-gold/40"
+      className="inline-block cursor-pointer whitespace-nowrap text-left focus:outline-none focus-visible:rounded-sm focus-visible:ring-1 focus-visible:ring-gold/40"
     >
       {content}
     </button>

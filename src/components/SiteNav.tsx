@@ -15,8 +15,8 @@ export function SiteNav({ activeRoute, onNavigate, theme, onToggleTheme }: SiteN
 
   return (
     <nav className="sticky top-0 z-50 bg-paper/85 backdrop-blur-md">
-      <div className="mx-auto flex h-16 max-w-[900px] items-center justify-center overflow-x-auto px-4 sm:px-6">
-        <ul className="flex min-w-max items-center justify-start gap-8 whitespace-nowrap px-10 sm:gap-12 sm:px-0">
+      <div className="mx-auto flex h-16 max-w-[900px] items-center justify-start overflow-x-auto pl-8 pr-20 sm:justify-center sm:px-6">
+        <ul className="flex min-w-max items-center justify-start gap-8 whitespace-nowrap sm:gap-12">
           {navItems.map((item) => (
             <li key={item.id} className="relative">
               <a
