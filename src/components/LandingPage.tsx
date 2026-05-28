@@ -13,12 +13,19 @@ export function LandingPage({ onNavigate, onOpenPost }: LandingPageProps) {
   return (
     <main className="mx-auto max-w-[900px] px-6">
       <section className="flex min-h-[46vh] flex-col justify-center py-12 text-center sm:min-h-[52vh] sm:py-16">
-        <h1 className="font-serif text-[clamp(1.35rem,6.2vw,2.12rem)] leading-none whitespace-nowrap text-ink sm:text-[clamp(2.3rem,6.4vw,4.4rem)]">
-          <PredictiveText
-            text="Thinking with Machines"
-            replayable
-            label="Replay headline animation"
-          />
+        <h1 className="font-serif text-[clamp(2.3rem,12vw,4rem)] leading-[0.9] text-ink sm:text-[clamp(2.3rem,6.4vw,4.4rem)] sm:leading-none">
+          <span className="block sm:hidden">
+            <span className="block">Thinking</span>
+            <span className="block">with</span>
+            <span className="block">Machines</span>
+          </span>
+          <span className="hidden sm:block">
+            <PredictiveText
+              text="Thinking with Machines"
+              replayable
+              label="Replay headline animation"
+            />
+          </span>
         </h1>
         <motion.p
           initial={{ opacity: 0, y: 12 }}

@@ -13,13 +13,14 @@ export interface ContentPost {
   timestamp: number;
 }
 
-const rawPosts = import.meta.glob<string>('./**/*.md', {
+const rawPosts = import.meta.glob<string>(['./brain-dump/*.md', './rabbit-hole/*.md', './lab-bench/*.md'], {
   eager: true,
   query: '?raw',
   import: 'default',
 });
 
 const sectionIds = new Set<ContentSectionId>(['brain-dump', 'rabbit-hole', 'lab-bench']);
+const wordsPerMinute = 220;
 
 function parseFrontmatter(source: string) {
   const match = source.match(/^---\n([\s\S]*?)\n---\n?([\s\S]*)$/);
@@ -56,6 +57,17 @@ function getStringField(metadata: Record<string, string>, field: string, path: s
   return value;
 }
 
+function estimateReadTime(body: string) {
+  const text = body
+    .replace(/---[\s\S]*?---/, '')
+    .replace(/`([^`]+)`/g, '$1')
+    .replace(/[#*_>\-[\]()]/g, ' ');
+  const wordCount = text.trim().split(/\s+/).filter(Boolean).length;
+  const minutes = Math.max(1, Math.ceil(wordCount / wordsPerMinute));
+
+  return `${minutes} min read`;
+}
+
 function postFromModule(path: string, source: string): ContentPost {
   const parts = path.split('/');
   const section = parts.at(-2);
@@ -74,7 +86,7 @@ function postFromModule(path: string, source: string): ContentPost {
     title: getStringField(metadata, 'title', path),
     description: getStringField(metadata, 'description', path),
     date,
-    readTime: getStringField(metadata, 'readTime', path),
+    readTime: estimateReadTime(body),
     body,
     timestamp: Date.parse(date),
   };

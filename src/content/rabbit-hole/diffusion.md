@@ -2,7 +2,6 @@
 title: Why Diffusion Models Work
 description: The bridge between denoising objectives, score matching, and useful generative priors.
 date: 2026-10-03
-readTime: 8 min read
 ---
 
 Diffusion models start with a strange bargain: destroy data gradually, then learn to reverse the destruction. The forward process is deliberately simple. Add noise step by step until the original example is gone.

@@ -2,7 +2,6 @@
 title: Mixture of Experts
 description: Sparse routing, load balancing, and the appeal of scaling parameters without scaling active compute.
 date: 2026-08-24
-readTime: 11 min read
 ---
 
 Mixture of Experts models scale by adding many specialised sub-networks while activating only a small number for each token. The attraction is straightforward: more parameters, but not proportionally more compute per inference step.

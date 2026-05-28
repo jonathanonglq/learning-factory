@@ -7,6 +7,7 @@
   --ink: #1c1712;
   --ink-rgb: 28, 23, 18;
   --gold: #c9a882;
+  --gold-rgb: 201, 168, 130;
   --dropcap: #a64f34;
 }
 
@@ -18,6 +19,7 @@
     --ink: #eee5d8;
     --ink-rgb: 238, 229, 216;
     --gold: #d6a86d;
+    --gold-rgb: 214, 168, 109;
     --dropcap: #d08a66;
   }
 }
@@ -29,6 +31,7 @@
   --ink: #1c1712;
   --ink-rgb: 28, 23, 18;
   --gold: #c9a882;
+  --gold-rgb: 201, 168, 130;
   --dropcap: #a64f34;
 }
 
@@ -39,6 +42,7 @@
   --ink: #eee5d8;
   --ink-rgb: 238, 229, 216;
   --gold: #d6a86d;
+  --gold-rgb: 214, 168, 109;
   --dropcap: #d08a66;
 }
 
@@ -101,12 +105,44 @@ button {
 .post-body {
   color: var(--ink);
   font-family: var(--font-article);
-  font-size: clamp(1.16rem, 2vw, 1.36rem);
-  line-height: 1.72;
+  font-size: 1.125rem;
+  line-height: 1.625;
 }
 
 .post-body p {
   margin: 0 0 1.45em;
+  text-align: justify;
+}
+
+.post-body h2 {
+  border-left: 2px solid rgba(var(--gold-rgb), 0.55);
+  color: var(--ink);
+  font-family: var(--font-article);
+  font-size: clamp(1.55rem, 2.6vw, 2rem);
+  font-weight: 400;
+  line-height: 1.2;
+  margin: 2.1em 0 0.72em;
+  padding-left: 0.72rem;
+}
+
+.post-body code {
+  border: 1px solid rgba(var(--gold-rgb), 0.22);
+  border-radius: 0.28rem;
+  background: rgba(var(--gold-rgb), 0.12);
+  color: var(--ink);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace;
+  font-size: 0.78em;
+  padding: 0.08em 0.32em;
+}
+
+.post-body ol {
+  margin: 0 0 1.45em 1.25em;
+  padding: 0;
+}
+
+.post-body li {
+  margin: 0 0 0.45em;
+  padding-left: 0.2em;
 }
 
 .post-body .with-dropcap::first-letter {

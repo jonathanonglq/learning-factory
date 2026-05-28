@@ -2,7 +2,6 @@
 title: Whisper-to-Graph
 description: A pipeline for turning spoken research notes into a linked concept map with source timestamps.
 date: 2026-10-30
-readTime: 6 min read
 ---
 
 The idea behind Whisper-to-Graph is to turn messy spoken notes into something navigable. First transcribe the audio, then segment it into claims, concepts, and transitions, and finally link those pieces into a graph with timestamps back to the source.

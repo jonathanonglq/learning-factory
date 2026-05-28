@@ -2,7 +2,6 @@
 title: Why Scaling Alone Won't Get Us to AGI
 description: We are hitting the limits of compute-first intelligence. True reasoning requires more than bigger clusters and more tokens.
 date: 2026-10-12
-readTime: 5 min read
 ---
 
 I keep returning to the feeling that scale is necessary but no longer a satisfying explanation. Larger models buy us breadth, fluency, and surprising transfer, but the hard parts of intelligence still seem to live in the loops around the model: memory, environment feedback, tool use, and the ability to test beliefs against reality.

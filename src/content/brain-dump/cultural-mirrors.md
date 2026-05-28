@@ -2,7 +2,6 @@
 title: Language Models as Cultural Mirrors
 description: What training sets tell us about ourselves, and why alignment is philosophical before it is only technical.
 date: 2026-07-22
-readTime: 6 min read
 ---
 
 Language models are trained on the residue of human culture. That makes them technically fascinating and socially uncomfortable. They compress patterns of taste, expertise, prejudice, generosity, and noise into a system that can answer with confidence even when the source material is conflicted.

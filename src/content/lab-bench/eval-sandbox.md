@@ -2,7 +2,6 @@
 title: Auto-Eval Sandbox
 description: A minimal harness for writing model evals against generated traces and hand-scored rubrics.
 date: 2026-08-29
-readTime: 9 min read
 ---
 
 The Auto-Eval Sandbox is a small harness for testing model behaviour with more discipline. It generates traces, scores them against explicit rubrics, and keeps enough context around each run to make failures inspectable.

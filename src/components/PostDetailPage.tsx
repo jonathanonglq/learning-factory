@@ -1,6 +1,9 @@
 import * as React from 'react';
 import { motion, useScroll, useSpring } from 'framer-motion';
 import { ArrowLeft } from 'lucide-react';
+import ReactMarkdown from 'react-markdown';
+import rehypeKatex from 'rehype-katex';
+import remarkMath from 'remark-math';
 import { formatPostDate, getContentPost, getSectionPosts, type ContentPost, type ContentSectionId } from '@/content/posts';
 import { landingSections } from '@/portfolio-data';
 
@@ -47,15 +50,24 @@ export function PostDetailPage({ section, postId, onBack }: PostDetailPageProps)
 }
 
 function ArticleBody({ post }: { post: ContentPost }) {
-  const paragraphs = post.body.split(/\n{2,}/).filter(Boolean);
+  let paragraphIndex = 0;
 
   return (
     <div className="post-body">
-      {paragraphs.map((paragraph, index) => (
-        <p key={paragraph} className={index === 0 ? 'with-dropcap dropcap-enter' : undefined}>
-          {paragraph}
-        </p>
-      ))}
+      <ReactMarkdown
+        remarkPlugins={[remarkMath]}
+        rehypePlugins={[rehypeKatex]}
+        components={{
+          p({ children }) {
+            const className = paragraphIndex === 0 ? 'with-dropcap dropcap-enter' : undefined;
+            paragraphIndex += 1;
+
+            return <p className={className}>{children}</p>;
+          },
+        }}
+      >
+        {post.body}
+      </ReactMarkdown>
     </div>
   );
 }

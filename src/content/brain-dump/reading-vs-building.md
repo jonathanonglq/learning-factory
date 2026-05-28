@@ -2,7 +2,6 @@
 title: On Reading Papers vs. Building Things
 description: The trap of infinite consumption. Why implementation is the only way to understand a new architecture deeply.
 date: 2026-08-15
-readTime: 4 min read
 ---
 
 Reading can create a convincing illusion of understanding. The terms become familiar, the diagrams feel natural, and the argument begins to sound obvious. Then implementation starts, and every vague sentence becomes a decision that code refuses to make for you.

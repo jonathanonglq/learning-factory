@@ -2,7 +2,6 @@
 title: Introduction to Tokenization
 description: Byte-pair encoding, weird edge cases, and why representation choices leak into behaviour.
 date: 2026-09-11
-readTime: 6 min read
 ---
 
 Tokenization is easy to underestimate because it happens before the model gets involved. Text goes in, tokens come out, and the rest of the system treats those tokens as the basic units of thought.

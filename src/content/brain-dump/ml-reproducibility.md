@@ -2,7 +2,6 @@
 title: The Reproducibility Crisis in ML Research
 description: Random seeds, cherry-picked baselines, and the pressure to publish SOTA results are distorting how we validate progress.
 date: 2026-09-28
-readTime: 8 min read
 ---
 
 Machine learning has a reproducibility problem that is easy to describe and hard to fix. A result can depend on data cleaning choices, random seeds, hardware details, hidden prompts, undocumented filtering, and a dozen other decisions that never make it into the abstract.

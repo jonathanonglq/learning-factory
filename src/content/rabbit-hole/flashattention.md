@@ -2,7 +2,6 @@
 title: FlashAttention and GPU Kernels
 description: How hardware-aware algorithms reduce memory traffic and unlock longer context windows.
 date: 2026-10-19
-readTime: 12 min read
 ---
 
 FlashAttention is a good example of an algorithm becoming faster by respecting the hardware it runs on. Standard attention is expensive not only because of arithmetic, but because it moves large intermediate matrices through memory.

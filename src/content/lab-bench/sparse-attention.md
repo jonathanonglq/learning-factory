@@ -2,7 +2,6 @@
 title: Sparse Attention Viz
 description: A toy environment for comparing attention layouts, memory movement, and interpretability affordances.
 date: 2026-11-14
-readTime: 7 min read
 ---
 
 This experiment is a small visual sandbox for comparing attention patterns. The goal is not to build a production model, but to make the trade-offs visible: which tokens can attend to which positions, how much context is preserved, and where memory pressure starts to bite.

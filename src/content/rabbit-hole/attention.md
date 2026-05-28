@@ -2,7 +2,6 @@
 title: Attention Is All You Need, Unpacked
 description: A ground-up visual path through attention heads, positional encodings, and residual streams.
 date: 2026-11-08
-readTime: 10 min read
 ---
 
 Attention became easier for me to understand once I stopped treating it as a magical lookup table and started thinking about it as a learned routing mechanism. Each token asks a question, compares that question against the surrounding context, and decides how much information to pull from each position.

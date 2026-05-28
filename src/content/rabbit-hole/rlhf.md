@@ -2,7 +2,6 @@
 title: RLHF from Scratch
 description: Implementing the PPO loop for alignment and understanding the reward model bottleneck.
 date: 2026-10-27
-readTime: 9 min read
 ---
 
 RLHF makes more sense when broken into its separate promises. First, collect human preferences. Then train a reward model to imitate those preferences. Finally, tune the language model so its outputs score well under that learned reward.

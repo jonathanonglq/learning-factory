@@ -2,7 +2,6 @@
 title: Research Summarizer
 description: A reading assistant that separates paper claims, evidence, assumptions, and follow-up experiments.
 date: 2026-09-18
-readTime: 8 min read
 ---
 
 The Research Summarizer is meant to slow down paper reading rather than speed it up. Instead of producing a generic abstract, it separates what the paper claims, what evidence supports those claims, what assumptions are doing hidden work, and what experiments would test the idea further.
