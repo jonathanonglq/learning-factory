@@ -135,6 +135,34 @@ button {
   padding: 0.08em 0.32em;
 }
 
+.post-body pre {
+  border: 1px solid rgba(var(--ink-rgb), 0.1);
+  border-radius: 0.45rem;
+  background:
+    linear-gradient(180deg, rgba(var(--ink-rgb), 0.035), rgba(var(--ink-rgb), 0.015)),
+    rgba(var(--gold-rgb), 0.08);
+  color: var(--ink);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace;
+  font-size: 0.82rem;
+  line-height: 1.65;
+  margin: 0 0 1.7em;
+  overflow-x: auto;
+  padding: 1rem 1.1rem;
+  scrollbar-color: rgba(var(--gold-rgb), 0.55) transparent;
+  scrollbar-width: thin;
+  white-space: pre;
+}
+
+.post-body pre code {
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: inherit;
+  display: block;
+  font-size: inherit;
+  padding: 0;
+}
+
 .post-body ol {
   margin: 0 0 1.45em 1.25em;
   padding: 0;
