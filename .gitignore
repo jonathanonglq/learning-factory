@@ -6,3 +6,4 @@ dist/
 .agents/
 references/
 skills-lock.json
+src/content/WRITING_GUIDE.md
