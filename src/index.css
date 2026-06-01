@@ -114,6 +114,22 @@ button {
   text-align: justify;
 }
 
+.post-body a {
+  color: var(--ink);
+  text-decoration-line: underline;
+  text-decoration-color: rgba(var(--gold-rgb), 0.85);
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.16em;
+  transition:
+    color 160ms ease,
+    text-decoration-color 160ms ease;
+}
+
+.post-body a:hover {
+  color: var(--gold);
+  text-decoration-color: currentColor;
+}
+
 .post-body h2 {
   border-left: 2px solid rgba(var(--gold-rgb), 0.55);
   color: var(--ink);
@@ -123,6 +139,26 @@ button {
   line-height: 1.2;
   margin: 2.1em 0 0.72em;
   padding-left: 0.72rem;
+}
+
+.post-body h3 {
+  color: rgba(var(--ink-rgb), 0.78);
+  font-family: var(--font-article);
+  font-size: 1.24rem;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.34;
+  margin: 1.75em 0 0.78em;
+}
+
+.post-body h4 {
+  color: rgba(var(--ink-rgb), 0.72);
+  font-family: var(--font-article);
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.3;
+  margin: 1.15em 0 0.4em;
+  text-transform: none;
 }
 
 .post-body code {
@@ -153,6 +189,14 @@ button {
   white-space: pre;
 }
 
+.post-body [data-rehype-pretty-code-figure] {
+  margin: 0 0 1.7em;
+}
+
+.post-body [data-rehype-pretty-code-figure] pre {
+  margin: 0;
+}
+
 .post-body pre code {
   border: 0;
   border-radius: 0;
@@ -163,7 +207,43 @@ button {
   padding: 0;
 }
 
+.post-body pre code [data-line] {
+  display: block;
+}
+
+.post-body .katex-display {
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0.2em 0;
+  scrollbar-color: rgba(var(--gold-rgb), 0.55) transparent;
+  scrollbar-width: thin;
+  -webkit-overflow-scrolling: touch;
+}
+
+.post-body .katex-display > .katex {
+  min-width: max-content;
+}
+
+:root[data-theme='dark'] .post-body [data-theme] span {
+  color: var(--shiki-dark) !important;
+}
+
+:root[data-theme='light'] .post-body [data-theme] span,
+:root:not([data-theme='dark']) .post-body [data-theme] span {
+  color: var(--shiki-light) !important;
+}
+
 .post-body ol {
+  list-style: decimal;
+  list-style-position: outside;
+  margin: 0 0 1.45em 1.25em;
+  padding: 0;
+}
+
+.post-body ul {
+  list-style: disc;
+  list-style-position: outside;
   margin: 0 0 1.45em 1.25em;
   padding: 0;
 }
@@ -171,6 +251,42 @@ button {
 .post-body li {
   margin: 0 0 0.45em;
   padding-left: 0.2em;
+}
+
+.post-body table {
+  border-collapse: collapse;
+  width: max-content;
+  max-width: 100%;
+}
+
+.post-body th,
+.post-body td {
+  border: 1px solid rgba(var(--ink-rgb), 0.1);
+  padding: 0.55rem 0.7rem;
+  vertical-align: top;
+}
+
+.post-body th {
+  background: rgba(var(--gold-rgb), 0.08);
+  font-weight: 600;
+  text-transform: none;
+}
+
+.post-body tbody tr:nth-child(even) td {
+  background: rgba(var(--ink-rgb), 0.015);
+}
+
+.post-body .post-table {
+  margin: 0 0 1.7em;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-color: rgba(var(--gold-rgb), 0.55) transparent;
+  scrollbar-width: thin;
+}
+
+.post-body .post-table table {
+  margin: 0;
 }
 
 .post-body .with-dropcap::first-letter {

@@ -2,34 +2,30 @@
 
 Use this guide when drafting or editing posts for `brain-dump`, `rabbit-hole`, and `lab-bench`.
 
-The goal is not to make every post sound the same. The goal is to make each post clear, grounded, technically careful where needed, and recognisably written by a person thinking through the subject.
+The goal is not uniformity. The goal is clear, grounded, technically careful writing that sounds like a person thinking through the subject.
 
 ## Core Voice
 
-Be concise where possible without losing essence. Prioritise specificity over abstraction, and clarity over flourish.
+Be concise without sanding off the point. Prefer specificity over abstraction, clarity over flourish, and concrete examples over broad claims.
 
-Write in a thoughtful, grounded, human way. Vary sentence lengths naturally. It is okay to sound slightly unfinished or opinionated at times if that reflects the actual state of the thought.
-
-Use concrete observations, subtle personality, and occasional conversational asides where appropriate. Do not try too hard to sound profound.
+Write in a thoughtful, grounded, human way. Natural uncertainty, parenthetical asides, mild opinion, and emotional directness can stay when they add voice. Clean typos, repeated words, unexpanded acronyms, grammar slips, unsupported certainty, and vague phrasing.
 
 Prefer:
 
 - Specific examples and concrete observations.
-- Real anecdotes, personal context, and local details when the user provides them and they are safe to share.
+- Real anecdotes, personal context, and local details when provided and safe to share.
 - Plain explanations of why something matters.
 - Natural paragraph rhythm.
-- Clear uncertainty when the idea is still developing.
 - British/Singapore English where spelling differs.
 
 Avoid:
 
-- Excessive transition phrases.
 - Generic inspirational language.
-- Neatly packaged conclusions.
 - Corporate phrasing.
-- Overly balanced or symmetrical paragraphs.
+- Overly neat or symmetrical paragraphs.
+- Motivational wrap-ups.
 - Em dashes.
-- Short, standalone sentence paragraphs used for dramatic emphasis. They often feel LLM-like. Combine them into nearby paragraphs unless the pause is genuinely doing work.
+- Short standalone paragraphs for dramatic effect, unless the pause is genuinely doing work.
 
 Avoid leaning on these words unless they are genuinely the plainest choice:
 
@@ -46,69 +42,54 @@ Avoid these sentence patterns:
 - "X stands out."
 - "It is worth noting."
 
-Keep productive messiness, but clean sloppiness. Conversational texture, parenthetical asides, mild uncertainty, and emotional directness can stay when they add voice. Typos, repeated words, unexpanded acronyms, grammar slips, unsupported certainty, and vague phrasing should be fixed.
-
-Do not over-sanitise the human parts of a draft. If a line carries genuine anxiety, doubt, frustration, or curiosity, sharpen it instead of replacing it with a safer corporate version.
+Do not over-sanitise human parts of a draft. If a line carries real anxiety, doubt, frustration, or curiosity, sharpen it instead of replacing it with a safer corporate version.
 
 ## Post Modes
 
-Each section has a different centre of gravity. Choose the mode first, then let the structure serve the post.
+Choose the mode first. Each section has a different centre of gravity.
 
 ### Brain Dump
 
 Use Brain Dump for less technical reflections on AI, society, work, incentives, open source, closed source, research culture, and how AI may reshape everyday life.
 
-The centre of gravity is reflection, argument, tension, and personal judgement. The writing can start from a question, an unease, a contradiction, or a concrete observation.
+The centre of gravity is reflection, argument, tension, and personal judgement. Start from a question, unease, contradiction, concrete observation, or lived example. The post does not need to resolve every tension; it can end with a sharper question, a revised view, or a more precise uncertainty.
 
-Good Brain Dump posts should make the reader feel how the thought developed. They do not need to resolve every tension. It is fine to end with a sharper question, a revised view, or a more precise uncertainty.
+Preserve personal specificity where useful. If the starting material includes a real conversation, workplace example, local context, or personal reaction, keep it unless there is a privacy, factual, or clarity reason to remove it.
 
-Brain Dump posts should preserve personal specificity where possible. If the starting material includes a real conversation, workplace example, local context, or personal reaction, keep it unless there is a privacy, factual, or clarity reason to remove it. Prefer cleaning the example over replacing it with a generic one.
-
-Section headings in Brain Dump can carry personality, tension, or a small aside if the heading still tells the reader what the section is doing. A heading like `The Transition Is Messy (Thankfully?)` can work because it signals both the topic and the writer's stance.
+Headings can carry personality or tension if they still tell the reader what the section is doing.
 
 ### Rabbit Hole
 
 Use Rabbit Hole for learning notes. The goal is to explain AI/ML concepts clearly enough that writing them helps internalise them.
 
-The centre of gravity is mechanism. Move from confusion to explanation. Start from what was hard to understand, what kept breaking in the mental model, or what practical question made the concept worth learning.
+The centre of gravity is mechanism. Move from confusion to explanation. Start from what was hard to understand, what broke the mental model, or what practical question made the concept worth learning.
 
-Prefer step-by-step clarity over cleverness. Definitions should feel useful, not textbook-like. Use examples, equations, edge cases, and careful definitions, but keep the explanation connected to the original confusion.
+Prefer step-by-step clarity over cleverness. Definitions should feel useful, not textbook-like. Use examples, equations, edge cases, and careful definitions, but keep them connected to the original confusion.
 
 ### Lab Bench
 
 Use Lab Bench for implementation notes, experiments, comparisons, reproductions, and practical lessons from building.
 
-The centre of gravity is practice. Make the setup and trade-offs visible. Explain what was tested, why it was tested, what changed during implementation, what failed, what surprised you, and what you would do differently next time.
-
-Results matter, but so do constraints, dead ends, and small implementation details that changed the outcome.
+The centre of gravity is practice. Make the setup, trade-offs, constraints, dead ends, results, and small implementation choices visible. Explain what was tested, why it was tested, what changed during implementation, what failed, what surprised you, and what you would do differently next time.
 
 ## Titles
 
-Titles should help the right reader decide whether the post is worth opening. They do not need to impress everyone else.
-
-Prefer clear over clever, but do not make every title flat. Use the actual subject, not vague abstractions. Avoid clickbait, grand claims, or titles that sound like content marketing.
-
-Section-specific guidance:
+Titles should help the right reader decide whether to open the post. Prefer clear over clever, but do not make every title flat. Name the actual subject; avoid clickbait, grand claims, and content-marketing language.
 
 - Brain Dump titles can carry more tension, personality, or uncertainty.
-- Rabbit Hole titles should name or strongly imply the concept being explained, but they can be thought-provoking, slightly clever, or metaphorical when that helps curiosity.
-- Lab Bench titles should usually include the experiment, comparison, implementation detail, or result being examined.
+- Rabbit Hole titles should name or strongly imply the concept, with a sharper angle where useful.
+- Lab Bench titles should usually include the experiment, comparison, implementation detail, or result.
 
-For Rabbit Hole, a good title can pair the concept with a sharper angle:
+Good Rabbit Hole title shapes:
 
 - `BM25, Embeddings, and the Trouble with Meaning`
 - `When Keywords Still Beat Vectors`
 - `Why Semantic Search Still Needs Exact Words`
 - `The Geometry of Similarity`
-- `The Strange Half-Life of Keyword Search`
 - `What Embeddings Forget`
 - `Rerankers Are Where Search Slows Down to Think`
-- `The Search Engine Inside RAG`
-- `Why Retrieval Starts Before the Model Answers`
 
-If a title uses tension, metaphor, or a clever phrase, the post should earn it. Refer back to the idea in the body, even lightly, so the title feels like part of the argument rather than decoration. For example, if the title mentions the `strange half-life` of keyword search, the post should explain why keyword methods keep remaining useful after many people expect them to fade.
-
-Avoid titles like:
+If a title uses tension, metaphor, or a clever phrase, the body should earn it. Avoid titles like:
 
 - `The Future of AI Search`
 - `Why Retrieval Matters More Than Ever`
@@ -116,63 +97,48 @@ Avoid titles like:
 
 ## Shape And Flow
 
-Do not be constrained by blog-post length. Be concise at the sentence level, but give each sub-idea enough room to become understandable from first principles.
+Posts should feel like one thought developing, not separate notes placed next to each other. Be concise at the sentence level, but do not skip the middle steps when an idea depends on a mechanism, assumption, trade-off, or hidden definition.
 
-If an idea depends on a mechanism, assumption, trade-off, or hidden definition, explore it until the reader can see why it matters. Do not skip the middle steps just to keep the piece short.
+Use continuity tools where they help:
 
-Posts should feel like one thought developing, not a stack of self-contained explanations. Different posts can use different amounts of structure, but always consider what gives the reader a reason to move from one section to the next.
+- A running example that changes as the explanation deepens.
+- A concrete anecdote that returns near the end with a sharper implication.
+- A progression from simple approach, to failure, to next idea, to trade-off.
+- Short bridge paragraphs that explain why one section leads to the next.
+- Section endings that name the limitation or unresolved question that motivates the next section.
 
-Useful continuity tools:
+Make the reader feel the problem before introducing the fix. Callbacks are useful, but each return to the thesis should add a new angle, example, caveat, or emotional turn. Cut repeated thesis restatements.
 
-- Use a running example when the topic benefits from it. Return to the same example across sections so the reader can see how each new idea changes the situation.
-- Treat strong anecdotes as possible through-lines. A concrete personal example can appear near the opening, return when testing the argument, and come back near the end as the implication becomes clearer.
-- Frame the post as a progression when possible. For example: start with a simple approach, notice where it breaks, add the next idea, then examine the new trade-off.
-- Add short bridge paragraphs at important turning points. A bridge should explain why the previous section naturally leads to the next, not merely announce a topic change.
-- Make the reader feel the problem before introducing the fix. Avoid jumping straight into definitions when a concrete failure case would make the concept more intuitive.
-- Let section endings create forward pull. A section can end by naming the limitation, unresolved question, or practical annoyance that the next section addresses.
+## Openings And Endings
 
-Callbacks are useful, but avoid restating the thesis in the same form across multiple sections. Each return to the main idea should add a new angle, example, caveat, or emotional turn. If a paragraph only repeats the central claim, cut or compress it.
+Openings should invite the reader into the actual problem, not sound like a generic introduction written before the writer knew the point.
 
-Do not force all of these into every post. Use them to make the writing feel more human and continuous, while preserving the natural shape of the topic.
+Useful openings:
 
-## Openings
+- A concrete problem, question, failure case, or observation.
+- The confusion that made the topic worth learning.
+- A small practical scene: a query that fails, an experiment that behaves strangely, a claim that feels too neat.
+- For Brain Dump, the tension or unease.
+- For Rabbit Hole, the incomplete mental model.
+- For Lab Bench, what was being tested and why it mattered.
 
-Openings should invite the reader into the actual problem. They should not feel like a generic introduction generated before the writer knew what they wanted to say.
+Endings should land somewhere useful without making the thinking feel more settled than it is.
 
-Useful opening moves:
-
-- Start with a concrete problem, question, failure case, or observation.
-- Start from the confusion that made the topic worth learning.
-- Start with a small practical scene: a query that fails, an experiment that behaves strangely, a claim that feels too neat.
-- For Brain Dump, start with the tension or unease rather than a broad statement about AI.
-- For Rabbit Hole, start with the mental model that initially felt incomplete.
-- For Lab Bench, start with what was being tested and why it mattered.
-
-These are suggestions, not a template. A post can begin quietly if that feels natural. Avoid forcing every opening into the same problem-solution shape.
-
-## Endings
-
-Endings should feel like the thought landed somewhere, even if the answer remains incomplete.
-
-Useful ending moves:
+Useful endings:
 
 - Say what changed in your understanding.
-- Name the remaining uncertainty more precisely than at the start.
+- Name the remaining uncertainty more precisely.
 - Return to the running example and show what the concept now explains.
 - State a practical implication, limitation, or next experiment.
-- For Brain Dump, leave the reader with the sharper version of the tension.
+- For Brain Dump, leave the sharper version of the tension.
 - For Rabbit Hole, end with the mental model you would now use.
 - For Lab Bench, end with what you would try next or what the result changed.
 
-Avoid motivational wrap-ups, generic summaries, and endings that make the post feel more settled than the thinking actually is.
-
 ## Technical Clarity
 
-Spell out abbreviations in full on first use, then use the acronym afterwards. For example: Hierarchical Navigable Small World (HNSW), then HNSW.
+Spell out abbreviations in full on first use, then use the acronym. For example: Hierarchical Navigable Small World (HNSW), then HNSW.
 
-For Rabbit Hole posts, it is fine to be more technical when the concept needs it. Include key equations where they make the mechanism clearer, but introduce every symbol in plain language and explain what the equation is doing.
-
-Equations should support understanding, not decorate the post. If an equation is included, follow it with a concrete interpretation or small example.
+For Rabbit Hole and technical Lab Bench posts, include equations when they clarify the mechanism. Introduce every symbol in plain language, then explain what the equation is doing with a concrete interpretation or small example.
 
 Use `$...$` for inline math and `$$...$$` for block equations.
 
@@ -183,29 +149,23 @@ Be clear about the status of a claim.
 - Use primary sources where possible for technical claims: papers, official documentation, standards, release notes, or author posts.
 - For fast-moving AI topics, check current sources before writing.
 - Distinguish between what a source claims, what is common practice, and what is your interpretation.
-- Do not over-cite in the prose if it makes the post stiff. A learning note should still read like a person thinking, not a literature review.
-- If a claim is uncertain, scoped, or dependent on context, say so.
+- Treat benchmarks, anecdotes, and production behaviour as different kinds of evidence.
+- If a claim is uncertain, scoped, or context-dependent, say so.
 
-Avoid claims that are broader than the evidence:
+Avoid claims broader than the evidence:
 
 - Avoid `always`, `never`, `clearly`, `obviously`, and similar certainty markers unless they are literally true.
-- State trade-offs in terms of conditions: corpus size, user type, latency budget, data quality, model capability, organisational constraints.
-- Prefer "can", "often", "usually", "in this setup", or "under this assumption" when the claim is context-dependent.
-- Say where a claim stops applying.
-- Say what would change the conclusion when that is knowable.
-- Treat benchmarks, anecdotes, and production behaviour as different kinds of evidence.
+- State trade-offs in terms of conditions: corpus size, user type, latency budget, data quality, model capability, or organisational constraints.
+- Prefer "can", "often", "usually", "in this setup", or "under this assumption" for context-dependent claims.
+- Say where a claim stops applying and what would change the conclusion when knowable.
 
-Good writing can still be opinionated. The point is to make the scope of the opinion visible.
-
-For Artificial General Intelligence (AGI), automation, labour market, and future-society claims, be especially careful about certainty. Avoid saying something is `bound to happen` unless the post is explicitly arguing for that forecast and supporting it. Prefer conditional framing such as "if something like this arrives", "should this happen", or "I do not know when, or whether, that happens" when the future claim is a boundary condition rather than the main argument.
+For Artificial General Intelligence (AGI), automation, labour markets, and future-society claims, be especially careful. Avoid saying something is `bound to happen` unless the post is explicitly arguing for that forecast and supporting it. Prefer conditional framing such as "if something like this arrives", "should this happen", or "I do not know when, or whether, that happens".
 
 ## Sources And Further Reading
 
-Use source names in prose when they help the reader understand lineage. For example, it is fine to mention that Best Matching 25 (BM25) comes from the Okapi information retrieval work, or that Retrieval Augmented Generation (RAG) is associated with Lewis et al. 2020. Do not force every factual sentence to carry a citation.
+Use source names in prose when they help the reader understand lineage. Do not force every factual sentence to carry a citation.
 
-Use an optional `## Further Reading` section at the end when a post relies on specific papers, documentation, or technical posts. Prefer this over footnotes for now because it keeps the main essay readable and works cleanly in Markdown.
-
-Format each item as a short bullet:
+Use an optional `## Further Reading` section when a post relies on specific papers, documentation, or technical posts. Keep it short:
 
 ```markdown
 ## Further Reading
@@ -215,127 +175,151 @@ Format each item as a short bullet:
 - Lewis et al. (2020), "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks" - canonical RAG paper.
 ```
 
-Use links when available and useful. Keep descriptions short. If a post only draws on general background knowledge and does not depend on specific sources, `Further Reading` is not required.
+Use links when available and useful. If a post only draws on general background knowledge, `Further Reading` is not required.
 
-Footnotes are not the default style. Use them only when a side note would distract from the main paragraph but is still worth preserving. If footnotes become common, revisit the renderer and house style.
+Footnotes are not the default style. Use them only when a side note would distract from the main paragraph but is still worth preserving.
 
 ## Markdown And Rendering
 
-Write with the site renderer in mind.
+Write with the site renderer in mind. The renderer treats Markdown as an article layout:
 
-- Use `##` for major sections. Avoid going deeper than `###` unless the post genuinely needs it.
+- The first paragraph receives a drop cap, so start with prose rather than a list, table, or code block.
+- Use `##` for major sections; these render as prominent headings with a left accent.
+- Use `###` for subsections; these render as quieter but visible headings.
+- Use `####` rarely for local labels inside dense technical sections.
 - Use bullets for lists, checks, and compact comparisons. Avoid turning reflective prose into long bullet lists.
-- Use inline code only for literal tokens, commands, filenames, variable names, field names, function names, model names, error messages, or query examples.
+- Use inline code only for literal tokens, commands, filenames, variables, fields, functions, model names, error messages, or query examples.
 - Do not use inline code merely to emphasise ordinary words.
-- Use block equations only when the equation is explained immediately before or after.
-- Keep equations readable in Markdown. Avoid dense notation if plain language would be clearer.
-- Use links sparingly inside paragraphs. If there are many sources, put them in `Further Reading`.
+- Use inline math with `$...$` and block math with `$$...$$`.
+- Use block equations only when explained immediately before or after.
+- Keep equations readable. Avoid dense notation when plain language is clearer.
+- Tables use GitHub-flavoured Markdown and scroll horizontally if wider than the text column.
+- Code blocks and tables carry visual weight. Place them near the explanation they support, not in a dump at the end.
+- Use links sparingly inside paragraphs. If there are many sources, use `Further Reading`.
 
-## Agent Workflow
+## Workflow
 
-For substantial posts, use a staged workflow. The goal is to separate thinking, evidence, drafting, and editing so the post does not become smooth before it becomes clear.
+For substantial posts, separate thinking, evidence, drafting, and editing so the post does not become smooth before it becomes clear.
 
-### Stage 0: Intent Clarification
+### 1. Clarify Intent
 
 Before outlining, clarify:
 
 - Target section: Brain Dump, Rabbit Hole, or Lab Bench.
-- Target reader level.
-- Intended depth.
+- Target reader level and intended depth.
 - Whether external research is needed.
 - Whether equations, code, diagrams, or examples are expected.
 - What the post should not become.
 
-### Stage 1: Outline Scrub
+### 2. Outline First
 
-Before drafting the full post, propose the structure first. Include:
+Before drafting, propose the structure and wait for feedback. Include:
 
 - Working title.
 - Thesis or learning objective.
-- Section titles.
-- A brief description of what each section should cover.
-- Key concepts, equations, or examples to include.
-- The intended narrative spine, such as a running example, step-by-step build-up, problem-to-fix progression, or bridge between sections.
+- Section titles and purpose.
+- Key concepts, equations, snippets, or examples.
+- Narrative spine: running example, progression, bridge, or problem-to-fix arc.
 - Expected reader confusion points.
-- Open questions, assumptions, or places where the argument may need sharper framing.
+- Open questions, assumptions, or weak spots.
 
-Stop after this stage and wait for feedback. Do not write the full post until the outline is approved.
+### 3. Lab Bench Repo-First Pass
 
-### Stage 2: Parallel Exploration
+For Lab Bench posts, do not default to subagents. If the experiment repo exists, start from the artefact: code, commands, generated outputs, logs, reports, assumptions, and failure cases.
 
-After the outline is approved, consider using a small set of specialised agents if the user explicitly asks for subagents or parallel drafting.
+Before outlining or drafting, produce an experiment map:
 
-Suggested roles:
+- What was built and what question it tested.
+- What data or corpus was used, including format transformations.
+- Which files are central to the experiment.
+- Which commands reproduce the setup and results.
+- What outputs were generated.
+- What metrics were used and what each metric measures.
+- Which implementation choices materially affect the result.
+- What assumptions are baked into the setup.
+- What the experiment does not test.
+- What changed, failed, or surprised you.
 
-- Researcher: consolidate relevant sources, current developments, definitions, examples, and citations where needed. For recent or fast-moving topics, browse the web and prioritise primary sources.
-- Technical explainer: work through the mechanism from first principles. For Rabbit Hole posts, identify useful equations, examples, edge cases, and places where readers may get confused.
-- Sceptic: challenge weak claims, missing assumptions, hype, unsupported leaps, and explanations that sound too neat.
-- Reader proxy: represent the target reader. Flag confusing jumps, undefined terms, over-compressed sections, and places where the explanation assumes too much.
+Structure the post around the experiment's spine:
 
-Run Researcher, Technical explainer, Sceptic, and Reader proxy in parallel when their tasks are independent. Give each agent the approved outline, the relevant section type, and this writing guide.
+- Why it was run.
+- What the setup was.
+- What pipeline was implemented.
+- What was measured.
+- What the results showed.
+- What the metrics mean and do not mean.
+- What examples or failure cases reveal.
+- What the experiment excludes.
+- What the result changes about the next build or question.
 
-Ask each parallel agent for structured notes, not prose drafts. They should return useful facts, mechanisms, equations, examples, risks, objections, comprehension issues, and suggested changes to the outline.
+For technical Lab Bench posts, plan code snippets during the outline. Snippets should show a design choice, mechanism, metric, data shape, or result path. Avoid large boilerplate snippets. Place snippets where they are discussed, not at the end.
 
-### Stage 3: Outline Revision
+When reporting metrics, explain:
 
-Before drafting, revise the outline using the parallel outputs. Resolve contradictions and decide what to keep.
+- The equation, if useful.
+- What the metric rewards.
+- What user behaviour or product assumption it implies.
+- What labels or relevance judgements it depends on.
+- What it hides.
+- How it should and should not be interpreted in this experiment.
 
-The revised outline should include:
+### 4. Use Subagents Sparingly
 
-- Final section structure.
-- Accepted source notes.
-- Accepted equations or examples.
-- Rejected ideas.
-- Unresolved caveats.
+Use subagents only when they add real value. Ask for structured notes, not prose drafts.
 
-### Stage 4: Drafting
+For Brain Dump and Rabbit Hole, useful roles can include:
 
-Run Synthesiser after outline revision. The Synthesiser should produce the full Markdown draft from the revised outline and selected notes.
+- Researcher: sources, facts, definitions, current developments, examples, and citations.
+- Technical explainer: first-principles mechanism, equations, examples, and edge cases.
+- Sceptic: weak claims, missing assumptions, hype, unsupported leaps, and explanations that sound too neat.
+- Reader proxy: confusing jumps, undefined terms, over-compressed sections, and hidden assumptions.
 
-The Synthesiser should not invent a new structure unless there is a clear gap. Preserve the agreed architecture.
+For Lab Bench, use a single-writer repo-first workflow by default. Only use subagents when the experiment is large, statistically subtle, unfamiliar, or high-stakes. Prefer repo-aware roles:
 
-### Stage 5: Adversarial Edit
+- Repo mapper: files, execution path, commands, inputs, outputs, and implementation boundaries.
+- Results analyst: metrics, timings, tables, reports, failure cases, and what the results support.
+- Implementation explainer: code snippets worth showing and why they matter.
+- Assumption checker: setup assumptions, benchmark interpretation, missing baselines, overbroad claims, and hidden limitations.
+- Reader proxy: reproducibility and whether the result is understandable without knowing the repo.
 
-Run two edit passes after the draft exists:
+### 5. Revise, Draft, Edit
 
-- Technical editor: check correctness, equations, acronym expansion, source fidelity, assumptions, and whether each section is technically clear.
-- Voice editor: check this guide's style rules, banned phrases, paragraph rhythm, no em dashes, no short dramatic standalone paragraphs, and whether the post sounds like a person thinking carefully.
+Before drafting, revise the outline using any research, repo inspection, or subagent notes. Decide what to keep, reject, and leave unresolved.
 
-When useful, split review into these passes:
+Draft from the approved structure. Do not invent a new structure unless there is a clear gap. For Lab Bench, preserve the experiment map, commands, file references, metrics, results, limitations, and snippet plan.
 
-- Clarity pass: can the reader follow the idea from first principles?
-- Continuity and structure pass: read the whole piece as one argument. Check that each section has a distinct job, that no section merely repeats an earlier point, and that the post develops rather than circles around the same thesis.
-- Technical correctness pass: are definitions, equations, assumptions, and source claims right?
-- Evidence pass: are claims properly scoped and supported?
-- Voice pass: does the prose sound human, specific, and grounded?
-- Compression pass: can sentences be tightened without removing necessary reasoning, personal specificity, or the concrete examples that give the piece its texture? Can repeated thesis statements be replaced with sharper examples or cut entirely?
+Run at least two edit passes:
 
-### Stage 6: Final Integration
+- Technical pass: correctness, equations, acronym expansion, source fidelity, assumptions, and scope.
+- Voice pass: this guide's style rules, paragraph rhythm, no em dashes, no unnecessary dramatic standalone paragraphs, and whether the post sounds human.
+
+When useful, add focused passes for clarity, continuity, evidence, or compression.
 
 Apply the final edit locally, then run guide checks and build.
-
-Do not use all roles by default. Use the smallest set that fits the post. For a quick draft, one writer and one editor may be enough. For technical Rabbit Hole posts or current-events Brain Dump posts, Researcher, Technical explainer, Sceptic, Reader proxy, Synthesiser, Technical editor, and Voice editor are usually useful.
 
 ## Checklist
 
 - Is the post in the right mode: Brain Dump, Rabbit Hole, or Lab Bench?
-- Does the title clearly signal the subject while matching the post's actual tone and argument?
-- If the title is clever or metaphorical, does the body make that title relevant?
+- Does the title clearly signal the subject and match the post's tone?
+- If the title is clever or metaphorical, does the body earn it?
 - Is the main idea clear within the first few paragraphs?
 - Does the opening start from a concrete problem, question, observation, or confusion?
 - Are abstract claims backed by concrete examples?
-- If the user provided personal examples, anecdotes, or local context, did the edit preserve them where useful?
-- Do the sections connect naturally, or does the post read like separate notes placed next to each other?
-- Does each section have a unique main point, or are multiple sections doing the same work?
+- If personal examples were provided, were they preserved where useful?
+- Do sections connect naturally instead of reading like separate notes?
+- Does each section have a distinct job?
 - Is there a running example, progression, or bridge where continuity would help?
-- Did any strong anecdote become a through-line rather than a one-off detail?
-- Does each callback to the thesis add something new, or is the post repeating the same idea in different words?
+- Does each callback to the thesis add something new?
 - Are claims scoped to the conditions where they are true?
-- Are speculative claims, especially about AGI or future labour markets, framed with the right level of uncertainty?
+- Are speculative claims, especially about AGI or future labour markets, framed with the right uncertainty?
 - Are sources or further reading included when the post depends on specific papers, documentation, or technical claims?
-- Are abbreviations spelled out before the acronym is used?
-- Are code formatting, headings, equations, and lists used only where they help the rendered post?
+- Are abbreviations spelled out before acronyms?
+- Are code formatting, headings, equations, lists, and tables used only where they help the rendered post?
+- For Lab Bench, is the experiment repo treated as the primary source of truth?
+- For Lab Bench, can the reader see the setup, central files, commands, outputs, and result path?
+- For Lab Bench, are metrics explained in terms of what they reward, assume, hide, and depend on?
+- For Lab Bench, are limitations and non-tested areas stated without becoming generic disclaimers?
 - Does the ending land somewhere useful without becoming too neat?
 - Does the post sound like a person thinking carefully, not a press release?
-- Are there any generic closing lines that can be cut?
-- Are there any em dashes to replace?
+- Are there generic closing lines to cut?
+- Are there em dashes to replace?

@@ -1,9 +1,12 @@
 import * as React from 'react';
 import { motion, useScroll, useSpring } from 'framer-motion';
 import { ArrowLeft } from 'lucide-react';
-import ReactMarkdown from 'react-markdown';
+import { MarkdownHooks } from 'react-markdown';
 import rehypeKatex from 'rehype-katex';
+import rehypePrettyCode from 'rehype-pretty-code';
+import remarkGfm from 'remark-gfm';
 import remarkMath from 'remark-math';
+import type { PluggableList } from 'unified';
 import { formatPostDate, getContentPost, getSectionPosts, type ContentPost, type ContentSectionId } from '@/content/posts';
 import { landingSections } from '@/portfolio-data';
 
@@ -12,6 +15,20 @@ interface PostDetailPageProps {
   postId: string;
   onBack: () => void;
 }
+
+const rehypePlugins: PluggableList = [
+  [
+    rehypePrettyCode,
+    {
+      theme: {
+        light: 'github-light',
+        dark: 'github-dark',
+      },
+      keepBackground: false,
+    },
+  ],
+  rehypeKatex,
+];
 
 export function PostDetailPage({ section, postId, onBack }: PostDetailPageProps) {
   const post = getContentPost(section, postId) ?? getSectionPosts(section)[0];
@@ -54,10 +71,18 @@ function ArticleBody({ post }: { post: ContentPost }) {
 
   return (
     <div className="post-body">
-      <ReactMarkdown
-        remarkPlugins={[remarkMath]}
-        rehypePlugins={[rehypeKatex]}
+      <MarkdownHooks
+        remarkPlugins={[remarkMath, remarkGfm]}
+        rehypePlugins={rehypePlugins}
+        fallback={null}
         components={{
+          table({ ...props }) {
+            return (
+              <div className="post-table" role="region" aria-label="Scrollable table">
+                <table {...props} />
+              </div>
+            );
+          },
           p({ children }) {
             const className = paragraphIndex === 0 ? 'with-dropcap dropcap-enter' : undefined;
             paragraphIndex += 1;
@@ -67,7 +92,7 @@ function ArticleBody({ post }: { post: ContentPost }) {
         }}
       >
         {post.body}
-      </ReactMarkdown>
+      </MarkdownHooks>
     </div>
   );
 }
